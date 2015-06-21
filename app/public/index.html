@@ -1,0 +1,69 @@
+<html ng-app="ui.bootstrap.demo">
+<head>
+    <script src="js/angular.min.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.13.0.min.js"></script>
+    <script src="js/example.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div ng-controller="AccordionDemoCtrl" class="container">
+
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Im a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li ng-repeat="item in items">
+                    <a ng-click="selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>OS</th>
+            <th>モデル</th>
+            <th>メーカー</th>
+            <th>アーキ</th>
+            <th>ビット</th>
+            <th>バージョン</th>
+            <th>保管場所</th>
+            <th>最終貸出日</th>
+            <th>最終使用者</th>
+            <th>有無</th>
+            <th>棚卸日</th>
+            <th>追加日</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="device in devices">
+            <td >{{device.id}}</td>
+            <td >{{device.os}}</td>
+            <td >{{device.model}}</td>
+            <td >{{device.maker}}</td>
+            <td >{{device.arch}}</td>
+            <td >{{device.bit}}</td>
+            <td >{{device.version}}</td>
+            <td >{{device.place}}</td>
+            <td >{{device.last_day}}</td>
+            <td >{{device.last_user}}</td>
+            <td >{{device.used}}</td>
+            <td >{{device.check}}</td>
+            <td >{{device.add}}</td>
+            <td ><button class="btn btn-default btn-sm" ng-click="showModal()">編集</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
