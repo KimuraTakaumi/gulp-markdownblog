@@ -1,0 +1,25 @@
+<% var siteTitle = site.title; %>
+<% var body = site.title; %>
+<!DOCTYPE html>
+<html lang="ja">
+<% include _head %>
+<link href="css/palette.css" rel="stylesheet">
+<body>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row default-primary-color" style="height:256px;" >
+            <div class="col-md-12 text-primary-color" style="position: relative;top: 50%;-webkit-transform: translateY(-50%);-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                <h1><%= siteTitle %></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>
+                    新着
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

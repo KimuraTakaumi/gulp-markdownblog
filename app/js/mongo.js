@@ -47,28 +47,20 @@ exports.stop = function(){
     });
 };
 
-exports.update = function(file, header){
-    console.log("mongo update " + header);
+exports.update = function(file, header,callback){
+    console.log("mongo update");
     console.log(header);
 
     var content = new Contents();
-    content.title = header.title;
-    content.author = header.author;
-    content.day = header.day;
+    content.title = header.meta.title;
+    content.author = header.meta.author;
+    content.day = header.meta.day;
     content.file = file.path;
 
-    content.save(function(err) {
-        if(err){
-            console.log("error");
-        } else {
-            console.log("success " + file.path);
-        }
-    });
+    content.save(callback);
 };
 
-exports.query = function(id){
-    Contents.find({},function(err, items){
-        console.log(items);
-    });
+exports.query = function(callback){
+    Contents.find({},callback);
 }
 

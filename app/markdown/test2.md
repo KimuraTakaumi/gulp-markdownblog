@@ -1,7 +1,9 @@
 ---
-title:  test
-author:  other
-day: 2015/6/18 
+title:   My awesome markdown file
+author:  Me i  
+day: 2015/6/16 
 --- 
+ 
+# test2 
 
-# aio    
+# test3  v
